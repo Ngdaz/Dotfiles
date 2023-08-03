@@ -1,0 +1,25 @@
+  # Example  
+  # Generate an SSH-key:
+  # ssh-keygen -t ed25519 -C "email@example.com"
+
+  # Host github-doe-company
+  #  HostName github.com
+  #  User git
+  #  IdentityFile ~/.ssh/id_ed25519_doe_company
+
+  # clone with: git remote add origin git@github-doe-company:username/repo.git
+  
+  # or change using: git remote set-url origin git@github-doe-company:username/repo.git
+  
+
+  # COS
+Host ssh.dev.azure.com
+	HostName ssh.dev.azure.com
+	User chienpb
+	IdentityFile ~/.ssh/id_CityOS
+
+Host gitlab.com
+	HostName gitlab.com
+	User ngdazz
+	IdentityFile ~/.ssh/id_gitlab_out
+
