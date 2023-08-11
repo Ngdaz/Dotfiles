@@ -89,9 +89,7 @@ M.on_attach = function(client, bufnr)
 	end
 
 	if client.name == "volar" then
-		if client.resolved_capabilities then
-			client.resolved_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
-		end
+    client.server_capabilities.documentFormattingProvider = false
 	end
 
 	lsp_keymaps(bufnr)
