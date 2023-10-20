@@ -26,6 +26,8 @@ require "user.keymaps"
 require "user.mini-cursorword"
 require "user.neoscroll"
 require "user.onedark"
+require "user.transparent"
+
 
 
 

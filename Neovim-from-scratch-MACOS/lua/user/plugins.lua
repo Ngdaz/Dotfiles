@@ -74,6 +74,10 @@ return packer.startup(function(use)
 	use({ "NLKNguyen/papercolor-theme" })
 	use({ "projekt0n/github-nvim-theme" })
 	use({ "gruvbox-community/gruvbox" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
+
+	-- Transparent background
+	use({ "xiyaowong/nvim-transparent" })
 
 	-- Cmp
 	use({ "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" }) -- The completion plugin
