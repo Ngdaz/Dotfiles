@@ -12,6 +12,8 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>i", "<cmd>Lazy<cr>", { desc = "Lazy" })
+keymap("n", "<leader>T", "<cmd> Telescope live_grep <cr>", { desc = "Fine Text" })
+-- keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", { desc = "Comment Code" })
 
 keymap({ "n", "v" }, "<leader>l", function()
   Util.format({ force = true })

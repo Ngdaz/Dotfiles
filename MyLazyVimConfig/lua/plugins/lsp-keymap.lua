@@ -14,9 +14,6 @@ return {
         desc = "Format code",
       }
 
-      keys[#keys + 1] =
-        { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" }
-      -----
       keys[#keys + 1] = {
         "<leader>la",
         vim.lsp.buf.code_action,
@@ -24,6 +21,7 @@ return {
         mode = { "n", "v" },
         has = "codeAction",
       }
+
       keys[#keys + 1] = {
         "<leader>lA",
         function()
@@ -39,26 +37,46 @@ return {
         desc = "Source Action",
         has = "codeAction",
       }
-      ----
-      keys[#keys + 1] = {
-        "<leader>lA",
-        function()
-          vim.lsp.buf.code_action({
-            context = {
-              only = {
-                "source",
-              },
-              diagnostics = {},
-            },
-          })
-        end,
-        desc = "Source Action",
-        has = "codeAction",
-      }
+      -- Disable some keymaps
+      keys[#keys + 1] = { "<leader>ca", false }
+      keys[#keys + 1] = { "<leader>cA", false }
+      keys[#keys + 1] = { "<leader>cD", false }
+      keys[#keys + 1] = { "<leader>cr", false }
+      keys[#keys + 1] = { "<leader>cl", false }
     end,
   },
   {
     "williamboman/mason.nvim",
-    keys = { { "<leader>lm", "<cmd>Mason<cr>", desc = "Mason" } },
+    keys = {
+      {
+        "<leader>cm",
+        false,
+      },
+      { "<leader>lm", "<cmd>Mason<cr>", desc = "Mason" },
+    },
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      -- disable the keymap to grep files
+      { "<leader>/", false },
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    keys = {
+      {
+        "<leader>cF",
+        false,
+      },
+      {
+        "<leader>lF",
+        function()
+          require("conform").format({ formatters = { "injected" } })
+        end,
+        mode = { "n", "v" },
+        desc = "Format Injected Langs",
+      },
+    },
   },
 }

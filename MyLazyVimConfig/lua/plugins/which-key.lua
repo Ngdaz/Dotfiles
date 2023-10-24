@@ -7,10 +7,8 @@ return {
       defaults = {
         mode = { "n", "v" },
         ["<leader>l"] = { name = "+Format code action" },
+        ["<leader>c"] = { name = "Delete Buffer" },
       },
-    },
-    keys = {
-      { "<leader>c", false },
     },
   },
 }
