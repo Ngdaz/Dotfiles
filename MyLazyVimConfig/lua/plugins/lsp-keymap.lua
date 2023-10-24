@@ -13,8 +13,33 @@ return {
         end,
         desc = "Format code",
       }
+
       keys[#keys + 1] =
         { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" }
+      -----
+      keys[#keys + 1] = {
+        "<leader>la",
+        vim.lsp.buf.code_action,
+        desc = "Code Action",
+        mode = { "n", "v" },
+        has = "codeAction",
+      }
+      keys[#keys + 1] = {
+        "<leader>lA",
+        function()
+          vim.lsp.buf.code_action({
+            context = {
+              only = {
+                "source",
+              },
+              diagnostics = {},
+            },
+          })
+        end,
+        desc = "Source Action",
+        has = "codeAction",
+      }
+      ----
       keys[#keys + 1] = {
         "<leader>lA",
         function()
@@ -31,5 +56,9 @@ return {
         has = "codeAction",
       }
     end,
+  },
+  {
+    "williamboman/mason.nvim",
+    keys = { { "<leader>lm", "<cmd>Mason<cr>", desc = "Mason" } },
   },
 }
