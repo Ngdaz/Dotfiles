@@ -13,7 +13,7 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>i", "<cmd>Lazy<cr>", { desc = "Lazy" })
 keymap("n", "<leader>T", "<cmd> Telescope live_grep <cr>", { desc = "Fine Text" })
--- keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", { desc = "Comment Code" })
+keymap("n", "<leader>h", "<cmd>nohlsearch<CR><esc>", { silent = true, desc = "No Highlights" })
 
 keymap({ "n", "v" }, "<leader>l", function()
   Util.format({ force = true })
