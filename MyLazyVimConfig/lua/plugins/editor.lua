@@ -4,10 +4,19 @@ return {
     opts = {
       window = {
         mappings = {
-          ["l"] = "open",
+          ["l"] = "open_with_window_picker",
         },
       },
     },
+  },
+  {
+    "s1n7ax/nvim-window-picker",
+    name = "window-picker",
+    event = "VeryLazy",
+    version = "2.*",
+    config = function()
+      require("window-picker").setup()
+    end,
   },
   {
     "echasnovski/mini.bufremove",
@@ -39,6 +48,12 @@ return {
       mappings = {
         comment_line = "<leader>/",
       },
+    },
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      current_line_blame = true,
     },
   },
 }

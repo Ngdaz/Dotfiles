@@ -37,6 +37,34 @@ return {
         desc = "Source Action",
         has = "codeAction",
       }
+
+      keys[#keys + 1] = {
+        "<leader>lo",
+        function()
+          vim.lsp.buf.code_action({
+            apply = true,
+            context = {
+              only = { "source.organizeImports.ts" },
+              diagnostics = {},
+            },
+          })
+        end,
+        desc = "Organize Imports",
+      }
+
+      keys[#keys + 1] = {
+        "<leader>lL",
+        function()
+          vim.lsp.buf.code_action({
+            apply = true,
+            context = {
+              only = { "source.removeUnused.ts" },
+              diagnostics = {},
+            },
+          })
+        end,
+        desc = "Remove Unused Imports",
+      }
       -- Disable some keymaps
       keys[#keys + 1] = { "<leader>ca", false }
       keys[#keys + 1] = { "<leader>cA", false }
