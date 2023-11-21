@@ -23,3 +23,6 @@ Host gitlab.com
 	User ngdazz
 	IdentityFile ~/.ssh/id_gitlab_out
 
+## Another way to clone with access token:
+# git clone | git remote set-url =>  origin => https://youruser:access_token@yourhost/yourrepo
+# example: git clone https://ngdazz:access_token@github.com/github_repo
