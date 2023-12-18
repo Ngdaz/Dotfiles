@@ -65,12 +65,21 @@ return {
         end,
         desc = "Remove Unused Imports",
       }
+
+      keys[#keys + 1] = {
+        "<leader>ld",
+        function()
+          vim.diagnostic.open_float()
+        end,
+        desc = "Line Diagnostic",
+      }
       -- Disable some keymaps
       keys[#keys + 1] = { "<leader>ca", false }
       keys[#keys + 1] = { "<leader>cA", false }
       keys[#keys + 1] = { "<leader>cD", false }
       keys[#keys + 1] = { "<leader>cr", false }
       keys[#keys + 1] = { "<leader>cl", false }
+      keys[#keys + 1] = { "<leader>cd", false }
     end,
   },
   {

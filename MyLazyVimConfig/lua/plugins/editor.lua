@@ -7,6 +7,11 @@ return {
           ["l"] = "open_with_window_picker",
         },
       },
+      filesystem = {
+        filtered_items = {
+          visible = true,
+        },
+      },
     },
   },
   {
