@@ -4,10 +4,9 @@ return {
     event = "VeryLazy",
     opts = {
       plugins = { spelling = true },
-      defaults = {
-        mode = { "n", "v" },
-        ["<leader>l"] = { name = "+Format code action" },
-        ["<leader>c"] = { name = "Delete Buffer" },
+      spec = {
+        { "<leader>c", group = "Delete Buffer", mode = { "n", "v" } },
+        { "<leader>l", group = "Format code action", mode = { "n", "v" } },
       },
     },
   },
